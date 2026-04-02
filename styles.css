@@ -171,11 +171,16 @@ body {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 70%);
 }
 
+
+.hero__text h1,
+h1, h2, h3 {
+  color: #1d4ed8;
+}
+
 .hero__text h1 {
   margin: 12px 0 8px;
   font-size: 38px;
   letter-spacing: -0.02em;
-  color: #3b82f6;
 }
 
 .hero__illustration {
