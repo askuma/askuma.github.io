@@ -1,0 +1,54 @@
+{
+  "Project Manager": {
+    "label": "Project Manager",
+    "color": "#3b82f6",
+    "summary": "Facilitates agile delivery, aligns stakeholders, manages risks, and ensures business goals are met.",
+    "details": [
+      "Leads agile delivery across planning, execution, and stakeholder alignment.",
+      "Drives DevOps enablement to accelerate product rollout and reduce defects.",
+      "Manages resources, responsibilities, and stakeholder relationships.",
+      "Reports progress, issues, dependencies, and risks to leadership.",
+      "Plans around delivery constraints to maximize benefits and minimize risks."
+    ]
+  },
+  "Scrum Master": {
+    "label": "Scrum Master",
+    "color": "#60a5fa",
+    "summary": "Facilitates agile ceremonies, removes impediments, and supports the team in following Scrum practices.",
+    "details": [
+      "Agile project management and execution of agile ceremonies.",
+      "Helps teams through technical roadblocks.",
+      "Ensures adherence to agile principles and practices."
+    ]
+  },
+  "Product Owner": {
+    "label": "Product Owner",
+    "color": "#f59e42",
+    "summary": "Defines product vision, prioritizes backlog, and represents stakeholders' interests.",
+    "details": [
+      "Translates requirements into usable products.",
+      "Aligns delivery with business goals.",
+      "Acts as a bridge between stakeholders and the team."
+    ]
+  },
+  "Team": {
+    "label": "Team",
+    "color": "#6366f1",
+    "summary": "Delivers product increments, collaborates on solutions, and continuously improves processes.",
+    "details": [
+      "Collaborates across teams to incorporate the latest tech stack.",
+      "Evaluates team performance and manages competencies.",
+      "Implements and maintains content management systems."
+    ]
+  },
+  "Stakeholders": {
+    "label": "Stakeholders",
+    "color": "#10b981",
+    "summary": "Provide requirements, feedback, and validate deliverables to ensure business value.",
+    "details": [
+      "Participate in planning and review meetings.",
+      "Validate deliverables and provide feedback.",
+      "Help align project outcomes with business needs."
+    ]
+  }
+}

@@ -120,3 +120,75 @@ document.querySelectorAll('.hero__card a').forEach(link => {
     }, 150);
   });
 });
+
+// --- Agile Roles SVG Interactivity ---
+const svg = document.querySelector('.hero__illustration svg');
+let rolesData = {};
+
+// Load roles data from JSON
+fetch('roles-data.json')
+  .then(res => res.json())
+  .then(data => { rolesData = data; attachRoleHover(); });
+
+function attachRoleHover() {
+  if (!svg) return;
+  // Map SVG circles to role names
+  const roleMap = [
+    { selector: 'circle[cx="210"][cy="90"]', role: 'Project Manager' },
+    { selector: 'circle[cx="210"][cy="30"]', role: 'Scrum Master' },
+    { selector: 'circle[cx="90"]', role: 'Product Owner' },
+    { selector: 'circle[cx="330"]', role: 'Stakeholders' },
+    { selector: 'circle[cx="210"][cy="160"]', role: 'Team' }
+  ];
+
+  // Create popup
+  let popup = document.createElement('div');
+  popup.className = 'role-popup';
+  popup.style.position = 'fixed';
+  popup.style.display = 'none';
+  popup.style.zIndex = 9999;
+  popup.style.minWidth = '220px';
+  popup.style.maxWidth = '320px';
+  popup.style.background = 'var(--card)';
+  popup.style.color = 'var(--text)';
+  popup.style.border = '1px solid var(--accent)';
+  popup.style.borderRadius = '14px';
+  popup.style.boxShadow = '0 8px 32px rgba(0,0,0,0.18)';
+  popup.style.padding = '18px 18px 12px 18px';
+  popup.style.pointerEvents = 'none';
+  popup.style.transition = 'opacity 0.2s';
+  popup.style.fontSize = '15px';
+  document.body.appendChild(popup);
+
+  roleMap.forEach(({ selector, role }) => {
+    const el = svg.querySelector(selector);
+    if (!el) return;
+    el.style.cursor = 'pointer';
+    el.addEventListener('mouseenter', e => {
+      showRolePopup(role, e);
+      el.setAttribute('stroke', '#fff');
+      el.setAttribute('stroke-width', '3');
+    });
+    el.addEventListener('mousemove', e => {
+      moveRolePopup(e);
+    });
+    el.addEventListener('mouseleave', () => {
+      popup.style.display = 'none';
+      el.removeAttribute('stroke');
+      el.removeAttribute('stroke-width');
+    });
+  });
+
+  function showRolePopup(role, evt) {
+    const data = rolesData[role];
+    if (!data) return;
+    popup.innerHTML = `<div style="font-weight:700;font-size:17px;color:${data.color}">${data.label}</div><div style="margin:6px 0 10px 0;font-size:13px;color:var(--muted)">${data.summary}</div><ul style="margin:0 0 0 18px;padding:0 0 0 0;font-size:14px;">${data.details.map(d=>`<li>${d}</li>`).join('')}</ul>`;
+    popup.style.display = 'block';
+    moveRolePopup(evt);
+    popup.style.opacity = 1;
+  }
+  function moveRolePopup(evt) {
+    popup.style.left = (evt.clientX + 18) + 'px';
+    popup.style.top = (evt.clientY - 10) + 'px';
+  }
+}

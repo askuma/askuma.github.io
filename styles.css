@@ -485,3 +485,23 @@ ul li {
 body {
   transition: background 0.3s ease;
 }
+
+/* Agile SVG Role Popup */
+.role-popup {
+  font-family: "Inter", Arial, sans-serif;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: fixed;
+  min-width: 220px;
+  max-width: 320px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 18px 18px 12px 18px;
+  z-index: 9999;
+  font-size: 15px;
+  line-height: 1.5;
+}
