@@ -10,9 +10,29 @@ layout: default
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <h1>Ashutosh Kumar</h1>
+      </div>
+      <div class="nav-menu">
+        <a href="#summary" class="nav-link">Summary</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
   <div class="page">
     <header class="hero">
       <div class="hero__text">
@@ -25,7 +45,7 @@ layout: default
           <span>Hindi (Native/Bilingual)</span>
         </div>
       </div>
-      <div class="hero__card">
+      <div class="hero__card" id="contact">
         <h2>Contact</h2>
         <ul>
           <li><a href="tel:9347756890">9347756890</a></li>
@@ -35,7 +55,7 @@ layout: default
       </div>
     </header>
 
-    <section class="card">
+    <section class="card" id="summary">
       <h2>Summary</h2>
       <p>
         Project manager with 12+ years of IT experience spanning software development,
@@ -65,7 +85,7 @@ layout: default
       </div>
     </section>
 
-    <section class="grid">
+    <section class="grid" id="skills">
       <div class="card">
         <h2>Top Skills</h2>
         <ul class="chips">
@@ -92,7 +112,7 @@ layout: default
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="experience">
       <h2>Experience</h2>
 
       <div class="role">
@@ -193,5 +213,7 @@ layout: default
       <p>© 2026 Ashutosh Kumar · Built from public LinkedIn profile export</p>
     </footer>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
