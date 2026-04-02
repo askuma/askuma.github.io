@@ -150,7 +150,10 @@ body {
 
 .hero__text {
   position: relative;
-  background: linear-gradient(135deg, #0b1a3d, #1d4ed8 55%, #2a66f5 100%);
+  background: linear-gradient(135deg, rgba(11, 26, 61, 0.8), rgba(29, 78, 216, 0.8) 55%, rgba(42, 102, 245, 0.8) 100%),
+    url('https://images.unsplash.com/photo-1616628148275-3ac9cc5e09f8?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
   color: white;
   padding: 36px 36px 32px;
   border-radius: 20px;
@@ -166,6 +169,13 @@ body {
   width: 260px;
   height: 260px;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 70%);
+}
+
+.hero__text h1 {
+  margin: 12px 0 8px;
+  font-size: 38px;
+  letter-spacing: -0.02em;
+  color: #3b82f6;
 }
 
 .hero__text h1 {
