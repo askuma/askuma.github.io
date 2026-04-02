@@ -178,11 +178,28 @@ body {
   color: #3b82f6;
 }
 
-.hero__text h1 {
-  margin: 12px 0 8px;
-  font-size: 38px;
-  letter-spacing: -0.02em;
+.hero__illustration {
+  margin-top: 18px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0,0,0,0.38);
 }
+
+.hero__illustration img {
+  width: 100%;
+  display: block;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.hero__illustration p {
+  margin: 8px;
+  color: #dbdef8;
+  font-size: 13px;
+  text-align: center;
+}
+
 
 .eyebrow {
   text-transform: uppercase;
