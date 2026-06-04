@@ -1,7 +1,0 @@
-url: "https://askuma.github.io"
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-title: "Ashutosh Kumar — Agile Project Manager"
-description: "Illustration of Agile Project Management roles and responsibilities"
-baseurl: ""
