@@ -5,154 +5,12 @@ import {
   Printer, ArrowLeft, ExternalLink, Award,
   CheckCircle2
 } from 'lucide-react';
+import {
+  PERSONAL, METRICS, EXPERIENCES, RECRUITER_SKILLS,
+  CERTIFICATIONS, EDUCATION, PROJECTS_HIGHLIGHT, LANGUAGES,
+} from '../data/content';
 
-// ─── Data ────────────────────────────────────────────────────────────────────
-
-const CONTACT = {
-  name:     'Ashutosh Kumar',
-  title:    'Technical Scrum Master  ·  AI Learning & Building  ·  DevOps  ·  15 yrs  ·  PMP®',
-  email:    'ashutosh.kumar1089@gmail.com',
-  phone:    '+91 93477 56890',
-  location: 'Hyderabad, Telangana, India  ·  Open to Remote',
-  linkedin: 'linkedin.com/in/ashutoshkumar-aa2747135',
-  github:   'github.com/askuma',
-};
-
-const SUMMARY = `Technical Scrum Master with 15+ years in enterprise IT, combining hands-on development expertise with agile team leadership. I bridge engineering teams and business stakeholders — leading by understanding the work deeply, not just managing it. Currently building AI-driven applications to stay ahead of where the industry is heading.`;
-
-const METRICS = [
-  { value: '15+',   label: 'Years in Enterprise IT' },
-  { value: '20+',   label: 'Enterprise Projects Delivered' },
-  { value: '$50M+', label: 'Combined Project Value' },
-  { value: '95%',   label: 'On-time Delivery Rate' },
-  { value: '50+',   label: 'Engineers Scaled Across Teams' },
-  { value: '8+',    label: 'PMs & Leads Mentored' },
-];
-
-const EXPERIENCES = [
-  {
-    role:     'Project Manager / Technical Scrum Master',
-    company:  'Accenture',
-    location: 'Hyderabad, India',
-    period:   'Nov 2022 – Present',
-    current:  true,
-    achievements: [
-      'Leading cross-functional team of 15+ engineers; achieved 95%+ on-time delivery rate across all programs',
-      'Architected DevOps transformation: reduced deployment cycle from 6 weeks to 3 days through CI/CD pipeline implementation',
-      'Mentored 8+ junior project managers and technical leads on agile frameworks and technical excellence',
-      'Managing $5M+ annual delivery programs spanning scope, schedule, budget, and stakeholder communication',
-      'Actively building AI-driven development tools and agentic workflows; documenting learnings via public GitHub projects',
-    ],
-    tools: 'Agile · Scrum · JIRA · GitLab · DevOps · Python · Java · JavaScript',
-  },
-  {
-    role:     'IT Project Manager | Scrum Master',
-    company:  'Coforge',
-    location: 'Hyderabad, India',
-    period:   'Jun 2022 – Nov 2022',
-    achievements: [
-      'Drove proactive delivery across 3 concurrent initiatives with $8M+ combined value',
-      'Managed resource planning, responsibilities, and schedules for cross-functional teams',
-      'Maintained stakeholder relationships across on-site and offshore locations',
-      'Identified and intervened in project slippage; optimised plans to minimise risks',
-    ],
-    tools: 'Project Planning · Resource Management · Risk Management · Agile Delivery',
-  },
-  {
-    role:     'Project Lead',
-    company:  'Wipro Technologies',
-    location: 'Hyderabad, India',
-    period:   'May 2019 – Jun 2022',
-    achievements: [
-      'Led agile team of 12 developers through product development and maintenance cycles',
-      'Reduced sprint cycle time by 35% through process optimisation and team efficiency improvements',
-      'Managed project scope, schedules, and risks across multiple parallel initiatives',
-      'Evaluated team performance quarterly; drove competence development and mentoring',
-    ],
-    tools: 'Agile · Scrum · Stakeholder Management · Technical Mentoring · Process Improvement',
-  },
-  {
-    role:     'Senior Project Engineer',
-    company:  'Wipro Technologies',
-    location: 'Hyderabad, India',
-    period:   'Jul 2013 – May 2019',
-    achievements: [
-      'Agile developer contributing to 6+ products across a 5+ year tenure',
-      'Led large-scale DITA migrations for enterprise clients — 100,000+ pages converted to standard',
-      'End-to-end implementation and maintenance of IXIASOFT DITACMS for enterprise content management',
-      'Led sprint planning and execution as technical module lead',
-    ],
-    tools: 'DITA · XML · Arbortext · IXIASOFT CMS · Agile Development',
-  },
-  {
-    role:     'Project Engineer',
-    company:  'Wipro Technologies',
-    location: 'Hyderabad, India',
-    period:   'Jul 2010 – Jun 2013',
-    achievements: [
-      'Developed integration programs establishing compatibility with third-party software products',
-      'Custom development using Arbortext proprietary XML editor language',
-      'Key developer and QA contributor for multiple enterprise customisation projects',
-    ],
-    tools: 'XML · Software Development · QA · Integration Development · Arbortext',
-  },
-];
-
-const SKILLS = [
-  {
-    category: 'Leadership & Agile',
-    items: ['Agile Project Management', 'Scrum Master', 'Team Leadership', 'Stakeholder Management',
-            'Cross-functional Leadership', 'Agile Coaching', 'Process Improvement', 'Risk Management'],
-  },
-  {
-    category: 'DevOps & Engineering',
-    items: ['DevOps', 'CI/CD Pipelines', 'Continuous Integration', 'Deployment Automation',
-            'JIRA', 'Git / GitLab', 'Technical Roadmapping', 'Architecture Reviews'],
-  },
-  {
-    category: 'Programming',
-    items: ['Python', 'Java', 'JavaScript', 'TypeScript', 'HTML5 / CSS3'],
-  },
-  {
-    category: 'AI & Emerging Tech',
-    items: ['AI-Assisted Development', 'Vibe Coding', 'GitHub Copilot', 'Agentic AI Workflows',
-            'Prompt Engineering', 'LLM Integration'],
-  },
-  {
-    category: 'Content & CMS',
-    items: ['DITA / XML', 'IXIASOFT DITACMS', 'Arbortext', 'Content Management Systems'],
-  },
-];
-
-const CERTIFICATIONS = [
-  'Project Management Professional (PMP®)  –  Project Management Institute (PMI)',
-  'Agile Project Management with Jira Cloud: Projects, Boards & Issues',
-  'Managing Project Stakeholders',
-  'Mistakes to Avoid in Agile Project Management',
-];
-
-const PROJECTS_HIGHLIGHT = [
-  {
-    name: 'guardrail_framework_complete',
-    desc: 'Unified AI guardrail abstraction layer — multi-backend routing across NVIDIA NeMo, GuardrailsAI, Presidio, and Lakera Guard. 40+ REST endpoints, A/B policy testing, Prometheus observability.',
-    tech: 'Python · FastAPI · PostgreSQL',
-    url: 'github.com/askuma/guardrail_framework_complete',
-  },
-  {
-    name: 'SprintPulse',
-    desc: 'AI-powered sprint status reporter — aggregates Jira, GitHub, and Slack data, then generates structured weekly insights via Mistral AI.',
-    tech: 'JavaScript · React · Mistral AI',
-    url: 'github.com/askuma/SprintPulse',
-  },
-  {
-    name: 'generate-tech-stack',
-    desc: 'Claude Code skill + MCP server that scans any project and auto-generates a visual TECH_STACK.html with architecture diagram and tool cards.',
-    tech: 'Python · MCP · Claude Code',
-    url: 'github.com/askuma/generate-tech-stack',
-  },
-];
-
-// ─── Print styles injected once ──────────────────────────────────────────────
+// ─── Print styles ─────────────────────────────────────────────────────────────
 const PRINT_STYLE = `
   @media print {
     .no-print { display: none !important; }
@@ -240,7 +98,6 @@ function ExperienceBlock({ exp, index }) {
 
 export default function RecruiterResume({ onSwitch }) {
   const printRef = useRef(null);
-
   const handlePrint = () => window.print();
 
   return (
@@ -297,43 +154,43 @@ export default function RecruiterResume({ onSwitch }) {
                 className="font-bold mb-1"
                 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: '#0F172A', letterSpacing: '-0.02em', lineHeight: 1.1 }}
               >
-                {CONTACT.name}
+                {PERSONAL.name}
               </h1>
               <p className="text-sm font-medium mt-1" style={{ color: '#1E3A5F' }}>
-                {CONTACT.title}
+                {PERSONAL.title}
               </p>
             </div>
             {/* Contact block */}
             <div className="flex flex-col gap-1.5 text-xs" style={{ color: '#475569' }}>
-              <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-1.5 hover:text-blue-700 transition-colors">
+              <a href={`mailto:${PERSONAL.email}`} className="flex items-center gap-1.5 hover:text-blue-700 transition-colors">
                 <Mail size={12} style={{ color: '#1E3A5F' }} />
-                {CONTACT.email}
+                {PERSONAL.email}
               </a>
               <span className="flex items-center gap-1.5">
                 <Phone size={12} style={{ color: '#1E3A5F' }} />
-                {CONTACT.phone}
+                {PERSONAL.phone}
               </span>
               <span className="flex items-center gap-1.5">
                 <MapPin size={12} style={{ color: '#1E3A5F' }} />
-                {CONTACT.location}
+                {PERSONAL.location}  ·  {PERSONAL.locationNote}
               </span>
               <a
-                href={`https://${CONTACT.linkedin}`}
+                href={PERSONAL.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 hover:text-blue-700 transition-colors"
               >
                 <Linkedin size={12} style={{ color: '#1E3A5F' }} />
-                {CONTACT.linkedin}
+                {PERSONAL.linkedin}
               </a>
               <a
-                href={`https://${CONTACT.github}`}
+                href={PERSONAL.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 hover:text-blue-700 transition-colors"
               >
                 <Github size={12} style={{ color: '#1E3A5F' }} />
-                {CONTACT.github}
+                {PERSONAL.github}
               </a>
             </div>
           </div>
@@ -366,7 +223,7 @@ export default function RecruiterResume({ onSwitch }) {
           className="mb-8"
         >
           <SectionTitle>Professional Summary</SectionTitle>
-          <p className="text-sm leading-relaxed" style={{ color: '#374151' }}>{SUMMARY}</p>
+          <p className="text-sm leading-relaxed" style={{ color: '#374151' }}>{PERSONAL.summary}</p>
         </motion.div>
 
         {/* ── Experience ─────────────────────────────────────── */}
@@ -391,7 +248,7 @@ export default function RecruiterResume({ onSwitch }) {
         >
           <SectionTitle>Skills</SectionTitle>
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-4">
-            {SKILLS.map((group, gi) => (
+            {RECRUITER_SKILLS.map((group, gi) => (
               <div key={gi}>
                 <h4 className="text-xs font-bold mb-2 uppercase tracking-wide" style={{ color: '#1E3A5F' }}>
                   {group.category}
@@ -425,12 +282,10 @@ export default function RecruiterResume({ onSwitch }) {
               className="p-4 rounded-xl"
               style={{ background: '#F8FAFC', border: '1px solid #E2E8F0' }}
             >
-              <p className="font-bold text-sm" style={{ color: '#0F172A' }}>Bachelor of Technology</p>
-              <p className="text-sm font-medium mt-0.5" style={{ color: '#1E3A5F' }}>Information Technology</p>
-              <p className="text-xs mt-1" style={{ color: '#64748B' }}>
-                Indian Institute of Information Technology (IIIT)
-              </p>
-              <p className="text-xs font-mono mt-1" style={{ color: '#94A3B8' }}>2006 – 2010</p>
+              <p className="font-bold text-sm" style={{ color: '#0F172A' }}>{EDUCATION.degree}</p>
+              <p className="text-sm font-medium mt-0.5" style={{ color: '#1E3A5F' }}>{EDUCATION.field}</p>
+              <p className="text-xs mt-1" style={{ color: '#64748B' }}>{EDUCATION.institution}</p>
+              <p className="text-xs font-mono mt-1" style={{ color: '#94A3B8' }}>{EDUCATION.period}</p>
             </div>
           </div>
 
@@ -440,7 +295,10 @@ export default function RecruiterResume({ onSwitch }) {
               {CERTIFICATIONS.map((cert, i) => (
                 <li key={i} className="flex items-start gap-2 text-xs" style={{ color: '#374151' }}>
                   <Award size={13} className="mt-0.5 flex-shrink-0" style={{ color: '#1E3A5F' }} />
-                  {cert}
+                  <span>
+                    <span className="font-medium">{cert.name}</span>
+                    <span style={{ color: '#94A3B8' }}> — {cert.issuer}</span>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -488,13 +346,13 @@ export default function RecruiterResume({ onSwitch }) {
           <p className="text-xs mt-3 font-mono" style={{ color: '#94A3B8' }}>
             All projects public at{' '}
             <a
-              href="https://github.com/askuma"
+              href={PERSONAL.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2 transition-colors hover:text-blue-700"
               style={{ color: '#1E3A5F' }}
             >
-              github.com/askuma
+              {PERSONAL.github}
             </a>
           </p>
         </motion.div>
@@ -508,10 +366,7 @@ export default function RecruiterResume({ onSwitch }) {
         >
           <SectionTitle>Languages</SectionTitle>
           <div className="flex gap-6">
-            {[
-              { lang: 'English', level: 'Professional Working' },
-              { lang: 'Hindi',   level: 'Native / Bilingual' },
-            ].map((l, i) => (
+            {LANGUAGES.map((l, i) => (
               <div key={i} className="text-sm" style={{ color: '#374151' }}>
                 <span className="font-semibold">{l.lang}</span>
                 <span className="ml-1.5 text-xs" style={{ color: '#94A3B8' }}>— {l.level}</span>
@@ -522,7 +377,7 @@ export default function RecruiterResume({ onSwitch }) {
 
         {/* Footer */}
         <div className="mt-10 pt-6 flex items-center justify-between" style={{ borderTop: '1px solid #E2E8F0' }}>
-          <p className="text-xs font-mono" style={{ color: '#CBD5E1' }}>Updated June 2026</p>
+          <p className="text-xs font-mono" style={{ color: '#CBD5E1' }}>Updated {PERSONAL.updatedDate}</p>
           <button
             onClick={onSwitch}
             className="no-print text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
